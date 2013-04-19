@@ -89,7 +89,17 @@
 
 					<h2>Portfolio</h2>
 
-					
+					 <?php if (validation_errors()){ ?>
+                                <div class="alert alert-error">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong>Error! <?php  echo validation_errors(); ?></strong> 
+							</div>
+                                <?php } if(isset($inserted) && $inserted == 1){?>
+                                <div class="alert alert-success">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong>Success!</strong> The users has been taged Successfuly. 
+							</div>
+                            <?php } ?>
 
 					<hr />
  
@@ -106,14 +116,21 @@
 							
         </div>
         	<div class="span3 control-group" style="width:200px;margin-top:5px;margin-left:0px;" >
-    
-        <select data-placeholder="Select Members" class="chzn-select" multiple style="width:270px" tabindex="4" >
+          <?php echo form_open_multipart('admin/tag_users'); ?>
+        <select data-placeholder="Who in this photo !" class="chzn-select" multiple name="tags[]"  style="width:270px" tabindex="4" required>
           <option value=""></option> 
           <?php if(isset($users)){ foreach($users as $user){?>
         <option value="<?php echo $user->id; ?>"><?php echo $user->name; ?></option> 
         
         	<?php }}?>
             </select>
+            <input type="hidden" name="photo_id" value="<?php echo $album->id?>" />
+             <input type="hidden" name="album_id" value="<?php echo $album->album_id?>" />
+            <div class="btn-toolbar" style="margin-left:30px">
+<input type="submit" value="Save" class="btn btn-primary btn-large" style="position:relative;float:left;margin-left:-30px;" data-loading-text="Loading...">
+								</div>
+                                
+							 <?php echo form_close();?>
 								</div>
                                 
 							</li>

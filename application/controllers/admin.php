@@ -504,6 +504,52 @@ function show_album_photo(){
 	
 	}
 ////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+function tag_users(){
+	
+if ($this->session->userdata('logged_in_admin')) {
+		
+		
+ $tags= $this->input->post('tags');
+  $photo_id= $this->input->post('photo_id');
+  
+  $tags_num=count($tags);
+  $i=0;
+ for($i=0;$i<$tags_num ;$i++){
+	     $data = array (
+		'user_id' => $tags[$i],	
+	   'photo_id' => $photo_id,
+	   
+	   );
+		    if($this->db->insert('album_tags',$data)){
+		  $flag['inserted']=1;
+		  
+		  
+		  }
+	 }
+ 
+  $data['inserted']=1;
+		 	
+			$id=$this->input->post('album_id');
+		$this->load->model('site_model');
+		 $this->load->model('civou/admin_model');
+		if($this->site_model->get_all_photo_albums($id)){
+			 $data['albums']=$this->site_model->get_all_photo_albums($id);
+			 $data['users']=$this->admin_model->get_all_user();
+			 $this->load->view('civou/photo_gallery_admin_show',$data); 
+			}else{
+				echo "dfgfdg";
+				}
+ 
+ 
+	}else{
+			redirect('admin');
+			}
+	
+	
+	
+	}
+////////////////////////////////////////
 
 
 
