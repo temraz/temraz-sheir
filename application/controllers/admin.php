@@ -512,6 +512,7 @@ if ($this->session->userdata('logged_in_admin')) {
 		
  $tags= $this->input->post('tags');
   $photo_id= $this->input->post('photo_id');
+   $album_id= $this->input->post('album_id');
   
   $tags_num=count($tags);
   $i=0;
@@ -519,6 +520,7 @@ if ($this->session->userdata('logged_in_admin')) {
 	     $data = array (
 		'user_id' => $tags[$i],	
 	   'photo_id' => $photo_id,
+	   'album_id' => $album_id,
 	   
 	   );
 		    if($this->db->insert('album_tags',$data)){
@@ -550,7 +552,56 @@ if ($this->session->userdata('logged_in_admin')) {
 	
 	}
 ////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////
+function bouns(){
+	
+	if ($this->session->userdata('logged_in_admin')) {
+			$this->load->model('civou/admin_model');	
+		 $this->load->library('form_validation');
+		
+			$this->form_validation->set_rules('username', 'username', 'required|trim|max_length[100]|xss_clean');
+			$this->form_validation->set_rules('bouns', 'Bouns', 'required|max_length[11]|trim|xss_clean|numeric');
+			if($this->form_validation->run()){
+				$user_id= $this->input->post('username');
+                $bouns= $this->input->post('bouns');
+				if($this->admin_model->get_user_bouns($user_id)){
+					$user_bouns=$this->admin_model->get_user_bouns($user_id);
+					$old_bouns=$user_bouns->rate;
+					$new_bouns=$old_bouns+$bouns;
+					
+					$this->admin_model->update_user_bouns($user_id,$new_bouns);
+					$this->admin_model->get_all_user();
+			$data['inserted']=1;
+			 $data['users']=$this->admin_model->get_all_user();
+			 $this->load->view('civou/bouns',$data); 
+			
+						
+					
+					
+					}else{
+						echo " sfsdf";
+						}
+				
+				}else{
+		
+		if($this->admin_model->get_all_user()){
+			
+			 $data['users']=$this->admin_model->get_all_user();
+			 $this->load->view('civou/bouns',$data); 
+			}else{
+				echo "sory can't do this right now try again please";
+				}
+					
+					}
+		 
+	}else{
+		redirect('admin');
+		}
+	
+	
+	
+	}
+////////////////////////////////////////
 
 
 	

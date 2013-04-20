@@ -60,15 +60,9 @@
 			<script src="<?php echo base_url();?>js/respond.js" tppabs="http://www.crivos.com/themes/porto/vendor/respond.js"></script>
 		<![endif]-->
 
-		<!-- Facebook OpenGraph Tags -->
-		<meta property="og:title" content="Porto Website Template."/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://www.crivos.com/themes/porto"/>
-		<meta property="og:image" content="http://www.crivos.com/themes/porto/"/>
-		<meta property="og:site_name" content="Porto"/>
-		<meta property="fb:app_id" content=""/> <!-- Use your own API Key. Go to http://developers.facebook.com/ for more information. -->
-		<meta property="og:description" content="Porto - Responsive HTML5 Template"/>
-
+	<style type="text/css">
+    #pic{width:80px;height:80px;}
+    </style>
 	</head>
 	<body >
 
@@ -83,7 +77,7 @@
 						<div class="slider" id="revolutionSlider">
 							<ul>
 								<li data-transition="fade" data-slotamount="10" data-masterspeed="300">
-									<img src="<?php echo base_url();?>images/slide-bg.jpg"  tppabs="http://www.crivos.com/themes/porto/img/slides/slide-bg.jpg" data-fullwidthcentering="on" alt="">
+									<img src="<?php echo base_url();?>images/slide-bg.jpg" data-fullwidthcentering="on" alt="">
 
 										<div class="caption sft stb visible-desktop"
 											 data-x="42"
@@ -136,8 +130,8 @@
 					<div class="container">
 
 						<div class="row center">
-							<div class="span12">
-								<h2 class="short">Time Bank for <strong class="inverted">The People </strong> global time volunteers.</h2>
+							<div class="span12" style="padding-top:20px;">
+								<h2 class="short">Time Bank is a <strong class="inverted">Share yourdfdfdff  </strong> Community for time volunteers.</h2>
 								<p class="featured lead">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.
 								</p>
@@ -146,24 +140,24 @@
 
 					</div>
                     
-                    <div class="container">
+                    <div class="container" style="margin-bottom:80px;">
                     
                     <div class="row">
 						<div class="span9">
 							<div class="blog-posts">
 
-								<article class="post post-large-image">
-									<div class="post-image" style="margin-left:100px">
-										<div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"controlNav":false, "animation":"slide", "slideshow": false, "maxVisibleItems": 1}'>
+								<article class="post post-large-image" style="margin-top:15px;height:350px;">
+									<div class="post-image" >
+										<div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"controlNav":true, "animation":"slide", "slideshow": true, "maxVisibleItems": 1}'>
 											<ul class="slides">
 												<li>
-													<img class="img-rounded" src="<?php echo base_url();?>images/1.jpg" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-image-1.jpg" alt="">
+													<img class="img-rounded" src="<?php echo base_url();?>images/1.jpg"  alt="">
 												</li>
 												<li>
-													<img class="img-rounded" src="<?php echo base_url();?>images/2.jpg" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-image-2.jpg" alt="">
+													<img class="img-rounded" src="<?php echo base_url();?>images/2.jpg"  alt="">
 												</li>
 												<li>
-													<img class="img-rounded" src="<?php echo base_url();?>images/3.jpg" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-image-3.jpg" alt="">
+													<img class="img-rounded" src="<?php echo base_url();?>images/3.jpg"  alt="">
 												</li>
 											</ul>
 										</div>
@@ -171,7 +165,7 @@
 			
 								
 			
-									<div class="post-content" style="margin-left:100px ; margin-top:-30px">
+									<div class="post-content" style=" margin-top:-30px">
 										<p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Pellentesque pellentesque tempor tellus eget hendrerit. Morbi id aliquam ligula. Aliquam id dui sem. Proin rhoncus consequat nisl, eu ornare mauris tincidunt vitae. [...]</p>
 
 									
@@ -179,7 +173,7 @@
 								</article>
                                 </div></div>
                                 
-                                <div class="span3">
+                                <div class="span3" style="float:right">
 							<aside class="sidebar">
 								<h2>Log In</h2>
 								<hr />
@@ -207,7 +201,7 @@
                             </aside> </div></div>
                             </div>
 
-					<div class="home-concept">
+					<div class="home-concept" >
 						<div class="container">
 
 							<div class="row center">
@@ -215,32 +209,32 @@
 								<span class="cloud"></span>
 								<div class="span2 offset1">
 									<div class="process-image">
-										<img src="<?php echo base_url();?>images/home-concept-item-1.png" tppabs="http://www.crivos.com/themes/porto/img/home-concept-item-1.png" alt="" />
+										<img src="<?php echo base_url();?>images/home-concept-item-1.png"  alt="" />
 										<strong>Strategy</strong>
 									</div>
 								</div>
 								<div class="span2">
 									<div class="process-image">
-										<img src="<?php echo base_url();?>images/home-concept-item-2.png" tppabs="http://www.crivos.com/themes/porto/img/home-concept-item-2.png" alt="" />
+										<img src="<?php echo base_url();?>images/home-concept-item-2.png"  alt="" />
 										<strong>Planning</strong>
 									</div>
 								</div>
 								<div class="span2">
 									<div class="process-image">
-										<img src="<?php echo base_url();?>images/home-concept-item-3.png" tppabs="http://www.crivos.com/themes/porto/img/home-concept-item-3.png" alt="" />
+										<img src="<?php echo base_url();?>images/home-concept-item-3.png"  alt="" />
 										<strong>Build</strong>
 									</div>
 								</div>
 								<div class="span4 offset1">
-									<div class="project-image">
-										<div id="fcSlideshow" class="fc-slideshow">
-											<ul class="fc-slides">
-												<li><a href="portfolio-single-project.html" tppabs="http://www.crivos.com/themes/porto/portfolio-single-project.html"><img src="<?php echo base_url();?>images/project-home-1.jpg" tppabs="http://www.crivos.com/themes/porto/img/projects/project-home-1.jpg" /></a></li>
-												<li><a href="portfolio-single-project.html" tppabs="http://www.crivos.com/themes/porto/portfolio-single-project.html"><img src="<?php echo base_url();?>images/project-home-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/projects/project-home-2.jpg" /></a></li>
-											</ul>
-										</div>
-										<strong class="our-work">Our Work</strong>
-									</div>
+                            <div class="project-image">
+                                <div id="fcSlideshow" class="fc-slideshow">
+                                    <ul class="fc-slides">
+                                        <li><a href="portfolio-single-project.html" ><img src="<?php echo base_url();?>images/project-home-1.jpg" /></a></li>
+                                        <li><a href="portfolio-single-project.html" ><img src="<?php echo base_url();?>images/project-home-2.jpg"  /></a></li>
+                                    </ul>
+                                </div>
+                                <strong class="our-work">Our Work</strong>
+                            </div>
 								</div>
 							</div>
 
@@ -251,7 +245,7 @@
 
 					<div class="container">
                     <div class="row">
-                    <div class="span3" style="width:40% ; padding:50px ; padding-top:0">
+                    <div class="span3" style="width:40% ;  padding-top:0">
                     <h1> Demo Video</h1>
                     <hr>
 							<a class="thumbnail" href="#">
@@ -259,7 +253,7 @@
 									</a>
                                     </div>
 						
-                        <div class="span6" style="width:40%">
+                        <div class="span6" style="width:50%;float:right">
                         <h1> News Feed</h1>
                         <hr>
 						<div class="tabs">
@@ -376,90 +370,53 @@
                         <div class="container">
                         <div class="row">
                         
-                        <div class="span3" style="width:30% ; margin-left:100px ; padding:50px;">
+                        <div class="span3" style="width:30% ;float:left; ">
                         	
-                        <h1> Effective Members</h1>
-                        <hr>
-                        <div class="tabs">
+                        <h1 style="margin-bottom:54px;"> Effective Members</h1>
+                        <hr >
+                        <div class="tabs" style="margin-top:-25px;">
 								<div class="tab-content">
 						
 										<ul class="simple-post-list">
+                                        <?php if(isset($active_users)){foreach($active_users as $active_user){?>
 											<li style="height:90px">
 												<div class="post-image" >
 													<div class="thumbnail">
-														<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">
-															<img src="<?php echo base_url();?>images/avatar.jpg" width="80" height="80" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-thumb-1.jpg" alt="">
+														<a href="<?php echo base_url();?>user/profile/<?php echo $active_user->id?>" >
+															<img id="pic" src="<?php echo base_url();?>images/profile/<?php echo $active_user->pic?>"  alt="">
 														</a>
 													</div>
 												</div>
+                                                
 												<div class="post-info">
-													<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">John Doe</a>
-													<div id="star" style="float:right ; margin-right:30px" > <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
+													<a href="<?php echo base_url();?>user/profile/<?php echo $active_user->id?>"><?php echo $active_user->name?></a>
+                                                    </div>
+													<div id="star" style="float:right ; margin-right:30px" > 
+                                                    <?php if(isset($active_user->rate)){ ?>
+                                                     <?php if($active_user->rate >= 200 && $active_user->rate < 400){ ?>
+														<i class="icon-star"></i>
+                                                         <?php }elseif($active_user->rate >= 400 && $active_user->rate < 600 ){?>
+                                                         <i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }elseif($active_user->rate >= 600 && $active_user->rate < 800){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i>
+                                                        <?php }elseif($active_user->rate >= 800 && $active_user->rate < 1000){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }elseif($active_user->rate >800){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }else{?>
+                                                        
+                                                         <i class="icon-star-half"></i>
+                                                        <?php }}?>
+													
 												</div>
                                                 <div class="post-meta">
-															author
-													</div>
+															<?php echo $active_user->job?>
+                                                        </div>
                                                     <div class="post-meta">
-														38 years
+														<?php echo $active_user->birthdate?> years
 													</div>
 											</li>
-											<li style="height:90px">
-												<div class="post-image">
-													<div class="thumbnail">
-														<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">
-															<img src="<?php echo base_url();?>images/205e460b479e2e5b48aec07710c08d50.jpg" width="80"  height="80" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-thumb-2.jpg" alt="">
-														</a>
-													</div>
-												</div>
-												<div class="post-info">
-													<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">Theirry Henry</a>
-                                                    <div id="star" style="float:right ; margin-right:30px" > <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
-																								</div>
-                                        <div class="post-meta">
-															accountant
-													</div>
-                                                    <div class="post-meta">
-														25 years
-													</div>                                                        
-											</li>
-											<li style="height:90px">
-												<div class="post-image">
-													<div class="thumbnail">
-														<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">
-															<img src="<?php echo base_url();?>images/sheir.jpg" width="80" height="80" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-thumb-3.jpg" alt="">
-														</a>
-													</div>
-												</div>
-												<div class="post-info">
-													<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">Mohamed Samy</a>
-                                                    <div id="star" style="float:right ; margin-right:30px" ><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
-                                                    <div class="post-meta">
-															web developer
-													</div>
-                                                    <div class="post-meta">
-														20 years
-													</div>
-												</div>
-											</li>
-                                            <li style="height:90px">
-												<div class="post-image">
-													<div class="thumbnail">
-														<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">
-															<img src="<?php echo base_url();?>images/temraz.jpg" width="80" height="80" tppabs="http://www.crivos.com/themes/porto/img/blog/blog-thumb-3.jpg" alt="">
-														</a>
-													</div>
-												</div>
-												<div class="post-info">
-													<a href="#" tppabs="http://www.crivos.com/themes/porto/blog-single.html">Mohamed Temraz</a>
-                                                    <div id="star" style="float:right ; margin-right:30px" ><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div>
-                                                    <div class="post-meta">
-															web developer
-													</div>
-                                                    <div class="post-meta">
-														20 years
-													</div>
-												</div>
-											</li>
+                                            <?php }}?>
 										</ul>
 								
 						</div>
@@ -467,7 +424,7 @@
                         </div>
                         
                                                                
-       <div class="span9" style="width:50%">
+       <div class="span9" style="width:50%;float:right">
 							<aside class="sidebar">
                             
                                     
@@ -530,8 +487,8 @@
 										<input type="text" value="<?php echo $this->input->post('field') ?>" maxlength="25" class="span3" name="field"  required>
 									</div>
                                      <div class="span3 control-group">
-										<label>Birthday *</label>
-										<input type="date" value="<?php echo $this->input->post('birthday') ?>" maxlength="10" class="span3" name="birthday" id="date" required>
+										<label>Age *</label>
+										<input  type="text" value="<?php echo $this->input->post('birthdate') ?>" maxlength="10" class="span3" name="birthdate" id="date" required>
 									</div>
                                     
                                     <div class="span6 control-group">
@@ -554,13 +511,13 @@
 						<hr class="tall" />
 							
                             <div class="container">
-						<div class="row center" style="margin-left:40px">
+						<div class="row center" style="margin-left:40px;">
 							<div class="span12">
 								<h2 class="short">There are many companies sponse this project...</h2>
 								<h4 class="lead tall">1,100 volunteers introduce their time. in Time Bank.</h4>
 							</div>
 						</div>
-						<div class="row center" style="margin-left:70px">
+						<div class="row center" >
 							<div class="flexslider unstyled" data-plugin-options='{"directionNav":false, "animation":"slide", "slideshow": false, "maxVisibleItems": 6}'>
 								<ul class="slides" >
 									<li>
@@ -602,6 +559,16 @@
 										<div class="span2">
 											<img class="mobile-max-width small" src="<?php echo base_url();?>images/logo-client-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/logo-client-2.jpg" alt="">
 										</div>
+                                        <div class="span2">
+											<img class="mobile-max-width small" src="<?php echo base_url();?>images/logo-client-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/logo-client-2.jpg" alt="">
+										</div><div class="span2">
+											<img class="mobile-max-width small" src="<?php echo base_url();?>images/logo-client-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/logo-client-2.jpg" alt="">
+										</div>
+                                        <div class="span2">
+											<img class="mobile-max-width small" src="<?php echo base_url();?>images/logo-client-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/logo-client-2.jpg" alt="">
+										</div><div class="span2">
+											<img class="mobile-max-width small" src="<?php echo base_url();?>images/logo-client-2.jpg" tppabs="http://www.crivos.com/themes/porto/img/logo-client-2.jpg" alt="">
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -616,7 +583,7 @@
 								<div class="row">
 									<div class="span6">
 										<div class="recent-posts">
-											<h2>Latest <strong>Time Bank </strong><strong style="color:#06C">Facebook</strong> Posts</h2>
+											<h2>Latest <strong>Time Bank </strong><strong style="color:#06C">Events</strong></h2>
 											<div class="row">
 												<div class="flexslider unstyled" data-plugin-options='{"directionNav":false, "animation":"slide"}'>
 													<ul class="slides">
@@ -690,14 +657,14 @@
 												</div>
 												<div class="row">
 													<div class="span6">
-														<a class="btn btn-flat btn-mini btn-primary pull-right pull-bottom-phone" href="#">View All Posts <i class="icon-arrow-right"></i></a>
+														<a class="btn btn-flat btn-mini btn-primary pull-right pull-bottom-phone" href="<?php echo base_url();?>home/events">View All Events <i class="icon-arrow-right"></i></a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="span6">
-										<h2>What <strong style="color:#09c">Volunteers</strong>'s Say</h2>
+										<h2>What <strong style="color:#09c">Volunteers</strong> Say</h2>
 										<div class="row">
 											<div class="flexslider flexslider-top-title unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide"}'>
 												<ul class="slides">
@@ -740,70 +707,7 @@
 				</div>
 			</div>
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="footer-ribon">
-							<span>Contact</span>
-						</div>
-						
-						<div class="span3">
-							<h4>Latest Tweet</h4>
-							<div class="twitter">
-								<p class="icon-twitter" ><strong style="font-family:Tahoma, Geneva, sans-serif"> Please wait...</strong></p>
-							</div>
-						</div>
-						<div class="span4">
-							<div class="contact-details">
-								<h4>Contact Us</h4>
-								<ul class="contact">
-									<li><p><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, Egypt</p></li>
-									<li><p><i class="icon-phone"></i> <strong>Phone:</strong> (02) xxxx-xxxxxxx</p></li>
-									<li><p><i class="icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></p></li>
-								</ul>
-							</div>
-						</div>
-						<div class="span2">
-							<h4>Follow Us</h4>
-							<div class="social-icons">
-								<ul class="social-icons">
-									<li class="facebook"><a href="#" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
-									<li class="twitter"><a href="#" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
-									<li class="linkedin"><a href="#" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
-								</ul>
-							</div>
-						</div>
-                        
-                        <div class="span3" style="margin-left:-30px; ">
-							<iframe class="img-rounded" width="200" height="300" style="width:280px ; height:280px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.eg/maps?hl=en&amp;ie=UTF8&amp;ll=27.019984,30.882568&amp;spn=5.185879,10.821533&amp;t=m&amp;z=7&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com.eg/maps?hl=en&amp;ie=UTF8&amp;ll=27.019984,30.882568&amp;spn=5.185879,10.821533&amp;t=m&amp;z=7&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-						</div>
-                        
-					</div>
-				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						<div class="row">
-							<div class="span1">
-								<a href="index.html"  class="logo">
-									<img  src="<?php echo base_url();?>images/graylogo.png" >
-								</a>
-							</div>
-							<div class="span7">
-								<p>Time Bank © Copyright 2013 . All Rights Reserved.</p>
-							</div>
-							<div class="span4">
-								<nav id="sub-menu">
-									<ul>
-										<li><a href="page-faq.html" tppabs="http://www.crivos.com/themes/porto/page-faq.html">FAQ's</a></li>
-										<li><a href="sitemap.html" tppabs="http://www.crivos.com/themes/porto/sitemap.html">Sign Up</a></li>
-										<li><a href="contact-us.html" tppabs="http://www.crivos.com/themes/porto/contact-us.html">Contact</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+<?php include('footer.php') ;?>
 		</div>
 
 		<!-- Libs -->

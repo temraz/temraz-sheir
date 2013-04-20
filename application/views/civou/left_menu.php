@@ -12,7 +12,8 @@
 <li><a href="<?php echo base_url(); ?>admin/show_delete_category">Delete Pics Category</a></li>  
 
 <li><a href="<?php echo base_url(); ?>admin/photo_gallery">Add New Album</a></li> 
-<li><a href="<?php echo base_url(); ?>admin/tag_photo_gallery">Tags users in Album</a></li>  
+<li><a href="<?php echo base_url(); ?>admin/tag_photo_gallery">Tags users in Album</a></li> 
+<li><a href="<?php echo base_url(); ?>admin/bouns">Bouns the users</a></li>  
         
 </ul>
 </aside>					

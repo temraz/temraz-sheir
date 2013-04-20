@@ -24,8 +24,9 @@ class User extends CI_Controller {
 				$data['job']=$user_data['job'];
 				$data['prof']=$user_data['prof'];
 				$data['pic']=$user_data['pic'];
+				$data['rate']=$user_data['rate'];
 				$data['hobbit']=$user_data['hobbit'];
-
+                
 				$id=$user_data['id'];
 				if ($this->session->userdata('user_id')==$id) {
 					 $data['owner']='yes';
@@ -41,14 +42,22 @@ class User extends CI_Controller {
 				    $data['time']=$user_data2['time'];
 				    
 				    
-				    }		 
+				    }
+					if($this->site_model->select_gallery($id)){
+						$data['user_gallerys']=$this->site_model->select_gallery($id);
+						$data['user_albums']=$this->site_model->select_user_albums($id);
+						
+						}
+					
+							 
 				}
 				
 						 
             $this->load->view('profile',$data);
             
         }else{
-            redirect('home');
+           			 
+            $this->load->view('error');
         }
         
         

@@ -56,18 +56,19 @@
 			<script src="respond.js" tppabs="http://www.crivos.com/themes/porto/vendor/respond.js"></script>
 		<![endif]-->
 
-		<!-- Facebook OpenGraph Tags -->
-		<meta property="og:title" content="Porto Website Template."/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://www.crivos.com/themes/porto"/>
-		<meta property="og:image" content="http://www.crivos.com/themes/porto/"/>
-		<meta property="og:site_name" content="Porto"/>
-		<meta property="fb:app_id" content=""/> <!-- Use your own API Key. Go to http://developers.facebook.com/ for more information. -->
-		<meta property="og:description" content="Porto - Responsive HTML5 Template"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+		<script src="<?php echo base_url();?>js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 		
                 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
                 <style type="text/css">
                 #valid p{color:#F00;}
+			.img-polaroid img{width:70px;height:70px;}
+			.img-polaroid img:hover{cursor:pointer}
+			.portfolio-item img{width:300px; height:200px;}
+			.portfolio-item img:hover{cursor:pointer}
+			.clearfix{margin:0px;padding:0px;}
+			.clearfix li{list-style:none;padding:0;margin:0px}
                 </style>
 	</head>
 	<body >
@@ -98,8 +99,14 @@
 							}
 
 ?>
-							<img class="thumbnail" src="<?php echo base_url();?>images/profile/thumb_profile/<?php if(isset($current_pic)){ echo $current_pic ; } ?>"  alt="" style="float:left ; margin-top:10px"  width="100"  > 
-														<h3 style="margin-top:55px ;float:left  ; margin-left:15px ; color:#fff;text-transform:capitalize"><?php if(isset($current_name)){echo $current_name ;}?></h3>
+
+<ul class="gallery clearfix" >
+				<li>
+                <a href="<?php echo base_url();?>images/profile/<?php if(isset($current_pic)){ echo $current_pic ; } ?>" rel="prettyPhoto" title="">
+							<img class="thumbnail" src="<?php echo base_url();?>images/profile/thumb_profile/<?php if(isset($current_pic)){ echo $current_pic ; } ?>"  alt="" style="float:left ; margin-top:10px"  width="100"  > </a>
+                            </li>
+                            </ul>
+														<h3 style="margin-top:55px ;float:left  ; margin-left:120px ;margin-top:-80px; color:#fff;text-transform:capitalize"><?php if(isset($current_name)){echo $current_name ;}?></h3>
 													
 							</div>
 						</div>
@@ -116,7 +123,12 @@
 							<aside class="sidebar">
 							<div class="span6" style="padding-bottom:20px">
 								<div class="thumbnail" style="float:left ; margin-left:-30px">
-								<img src="<?php echo base_url();?>images/profile/thumb_profile/<?php if(isset($pic)){ echo $pic ; } ?>" height="140" width="100" >
+                                <ul class="gallery clearfix">
+				<li>
+                <a href="<?php echo base_url();?>images/profile/<?php if(isset($pic)){ echo $pic ; } ?>" rel="prettyPhoto" title="">
+								<img src="<?php echo base_url();?>images/profile/thumb_profile/<?php if(isset($pic)){ echo $pic ; } ?>" height="140" width="100" ></a>
+                                
+                                </li></ul>
 														
                                                     </div>
                                                     
@@ -128,7 +140,21 @@
 															<small><?php if(isset($job)){echo $job ;}?></small>
 													</div>
                                                     <div class="post-meta">
-														<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+                                                     <?php if(isset($rate)){ ?>
+                                                     <?php if($rate >= 200 && $rate < 400){ ?>
+														<i class="icon-star"></i>
+                                                         <?php }elseif($rate >= 400 && $rate < 600 ){?>
+                                                         <i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }elseif($rate >= 600 && $rate < 800){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i>
+                                                        <?php }elseif($rate >= 800 && $rate < 1000){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }elseif($rate >800){?> 
+                                                         <i class="icon-star"></i><i class="icon-star"></i> <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+                                                        <?php }else{?>
+                                                        
+                                                         <i class="icon-star-half"></i>
+                                                        <?php }}?>
 													</div>
                                                     <?php if(($this->session->userdata('logged_in')) && $segment_id == $current_id){?>
                                                     <div class="icon-edit"><a href="#">edit</a></div>
@@ -274,51 +300,19 @@
 								</div>
 								
 								<div class="team-list sort-destination" data-sort-id="team" style="float:left ; margin-left:-15px"  >
-							<h3> Gallery Thumbnails</h3>
-                            
+							<h3 style="margin-left:10px;"><?php if(isset($username)){echo $username ;}?> Gallery</h3>
+                            <ul class="gallery clearfix">
+                                   <?php if(isset($user_gallerys)){foreach($user_gallerys as $gallery ){?>
 								<div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/blog-medium-image-1.jpg" width="70" height="70" >
-									</a>
+                                <li>
+                                     <a href="<?php echo base_url();?>albums/big/<?php echo $gallery->photo_name ;?> " rel="prettyPhoto[gallery2]" 
+ title="">
+										<img alt="" src="<?php echo base_url();?>albums/thumbs/<?php echo $gallery->photo_name; ?>" >
+								</a>
+                                </li>
                                     </div>
-                                    
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/blog-medium-image-2.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/blog-medium-image-3.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/project-1.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/project-2.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/project-3.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/office-1.jpg" width="70" height="70" >
-									</a>
-                                    </div>
-                                    <div class="img-polaroid" style="float:left ; margin-left:10px  ; margin-top:10px ; ">
-									<a href="#" class="thumb-info team">
-										<img alt="" src="<?php echo base_url();?>images/office-3.jpg" width="70" height="70" >
-									</a>
-                                    </div>
+                                    <?php }} ?>
+                                    </ul>
                                    
                                     
                                     </div>
@@ -332,51 +326,31 @@
                         
                         <div class="row" style="float:left ; margin-left:0">
                         
-                        <h3 style="color:#09c ; margin-left:30px"> <i style="color:#000 ; font-style:normal;text-transform:capitalize"> <?php if(isset($username)){echo $username ;}?></i>'s Activities</h3>
+                        <h3 style="color:#09c ; margin-left:30px"><i style="color:#000 ; font-style:normal;text-transform:capitalize"><?php if(isset($username)){echo $username ;}?>'s</i> Albums</h3>
                         
 						<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
-							<li class="span3 isotope-item websites">
+							
+                            <?php if(isset($user_albums)){foreach($user_albums as $album){?>
+							<li class="span3 isotope-item <?php echo $album->dept_name?>">
 								<div class="portfolio-item thumbnail">
-									<a href="portfolio-single-project.html" tppabs="http://www.crivos.com/themes/porto/portfolio-single-project.html" class="thumb-info">
-										<img alt="" src="<?php echo base_url();?>images/web-design.jpg" tppabs="http://www.crivos.com/themes/porto/img/projects/project-3.jpg">
+									<a href="<?php echo base_url();?>home/show_album_photo/<?php echo $album->id ;?>"  class="thumb-info">
+										<img alt="" src="<?php echo base_url();?>albums/thumbs/<?php echo $album->photo_name?>"  >
 										<span class="thumb-info-title">
-											<span class="thumb-info-inner">Web Design</span>
-											<span class="thumb-info-type">Website</span>
+											<span class="thumb-info-inner"><?php echo $album->name?></span>
+											<span class="thumb-info-type"><?php echo $album->dept_name?></span>
 										</span>
 										<span class="thumb-info-action">
 											<span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon-link"></i></span>
 										</span>
 									</a>
 								</div>
+                                
 							</li>
-							<li class="span3 isotope-item brands">
-								<div class="portfolio-item thumbnail">
-									<a href="portfolio-single-project.html" tppabs="http://www.crivos.com/themes/porto/portfolio-single-project.html" class="thumb-info">
-										<img alt="" src="<?php echo base_url();?>images/web-development.jpg" tppabs="http://www.crivos.com/themes/porto/img/projects/project-1.jpg">
-										<span class="thumb-info-title">
-											<span class="thumb-info-inner">Web Develop</span>
-											<span class="thumb-info-type">Website</span>
-										</span>
-										<span class="thumb-info-action">
-											<span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon-link"></i></span>
-										</span>
-									</a>
-								</div>
-							</li>
-							<li class="span3 isotope-item logos">
-								<div class="portfolio-item thumbnail">
-									<a href="portfolio-single-project.html" tppabs="http://www.crivos.com/themes/porto/portfolio-single-project.html" class="thumb-info">
-										<img alt="" src="<?php echo base_url();?>images/graphic.jpg" tppabs="http://www.crivos.com/themes/porto/img/projects/project-2.jpg">
-										<span class="thumb-info-title">
-											<span class="thumb-info-inner">Graphic Design</span>
-											<span class="thumb-info-type">Graphic</span>
-										</span>
-										<span class="thumb-info-action">
-											<span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon-link"></i></span>
-										</span>
-									</a>
-								</div>
-							</li>
+                            <?php }}else{?>
+                           <h3 style="color:#09c ; margin-left:30px">  <i style="color:#000 ; font-style:normal;text-transform:capitalize"><?php if(isset($username)){echo $username ;}?></i>
+                             didn't tagged in any albums until yet</h3>
+                            <?php }?>
+                            
                             </ul>
                             </div>
                             
@@ -551,7 +525,7 @@
 				</div>
 
 				
-	<?php if( $time=='' || $faculty=='' || $travel=='' || $about=='' ){?>			
+	<?php if($segment_id == $this->session->userdata('user_id')){ if( $time=='' || $faculty=='' || $travel=='' || $about=='' ){?>			
 <div id="modal">
 	<div id="heading">
 		You must fill out this fields first.
@@ -601,13 +575,13 @@
 								</div>
 							 <?php echo form_close();?>
 	</div>
-	<?php }?>
+	<?php }}?>
 </div>
 
 
 
 	<!--jQuery-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
 	<script src="<?php echo base_url();?>js/jquery.reveal.js"></script>
 
 	<script type="text/javascript">
@@ -626,72 +600,27 @@
 
 			</div>
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="footer-ribon">
-							<span>Contact</span>
-						</div>
-						
-						<div class="span3">
-							<h4>Latest Tweet</h4>
-							<div class="twitter">
-								<p class="icon-twitter" ><strong style="font-family:Tahoma, Geneva, sans-serif"> Please wait...</strong></p>
-							</div>
-						</div>
-						<div class="span4">
-							<div class="contact-details">
-								<h4>Contact Us</h4>
-								<ul class="contact">
-									<li><p><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, Egypt</p></li>
-									<li><p><i class="icon-phone"></i> <strong>Phone:</strong> (02) xxxx-xxxxxxx</p></li>
-									<li><p><i class="icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></p></li>
-								</ul>
-							</div>
-						</div>
-						<div class="span2">
-							<h4>Follow Us</h4>
-							<div class="social-icons">
-								<ul class="social-icons">
-									<li class="facebook"><a href="javascript:if(confirm(%27http://www.facebook.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.facebook.com/%27" tppabs="http://www.facebook.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
-									<li class="twitter"><a href="javascript:if(confirm(%27http://www.twitter.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.twitter.com/%27" tppabs="http://www.twitter.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
-									<li class="linkedin"><a href="javascript:if(confirm(%27http://www.linkedin.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linkedin.com/%27" tppabs="http://www.linkedin.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
-								</ul>
-							</div>
-						</div>
-                        
-                        <div class="span3">
-							<iframe class="img-rounded" width="300" height="300" style="width:280px ; height:280px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.eg/maps?hl=en&amp;ie=UTF8&amp;ll=27.019984,30.882568&amp;spn=5.185879,10.821533&amp;t=m&amp;z=7&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com.eg/maps?hl=en&amp;ie=UTF8&amp;ll=27.019984,30.882568&amp;spn=5.185879,10.821533&amp;t=m&amp;z=7&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-						</div>
-                        
-					</div>
-				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						<div class="row">
-							<div class="span1">
-								<a href="index.html"  class="logo">
-									<img  src="<?php echo base_url();?>images/graylogo.png" >
-								</a>
-							</div>
-							<div class="span7">
-								<p>Time Bank © Copyright 2013 . All Rights Reserved.</p>
-							</div>
-							<div class="span4">
-								<nav id="sub-menu">
-									<ul>
-										<li><a href="page-faq.html" tppabs="http://www.crivos.com/themes/porto/page-faq.html">FAQ's</a></li>
-										<li><a href="sitemap.html" tppabs="http://www.crivos.com/themes/porto/sitemap.html">Sign Up</a></li>
-										<li><a href="contact-us.html" tppabs="http://www.crivos.com/themes/porto/contact-us.html">Contact</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+		<?php include('footer.php') ;?>
 		</div>
 
+ <script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				$("area[rel^='prettyPhoto']").prettyPhoto();
+				
+				$(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',theme:'pp_default',slideshow:1000000, autoplay_slideshow: true});
+				$(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+		
+				$("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+					custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+					changepicturecallback: function(){ initialize(); }
+				});
+
+				$("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+					custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+					changepicturecallback: function(){ _bsap.exec(); }
+				});
+			});
+			</script>
 		<!-- Libs -->
 		<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js" tppabs="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="<?php echo base_url();?>js/jquery.js"/*tpa=http://www.crivos.com/themes/porto/vendor/jquery.js*/><\/script>')</script>

@@ -4,7 +4,14 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->model('site_model');
+		if($this->site_model->select_effective_user()){
+			$data['active_users']=$this->site_model->select_effective_user();
+			$this->load->view('home',$data);
+			}else{
+		$this->load->view('error');		
+				}
+		
 	}
 	
 ////////////////////////////////////////////
@@ -53,14 +60,14 @@ public function profile()
 		$this->form_validation->set_rules('r_password', 'Confirm Password', 'required|matches[password]|md5|max_length[250]|trim');
 		 $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[11]|trim|xss_clean|numeric');
 		  $this->form_validation->set_rules('mobile', 'Mobile', 'required|max_length[11]|trim|xss_clean|numeric');
-		 $this->form_validation->set_rules('birthday', 'birthday', 'required|trim|xss_clean|max_length[10]|');
+		 $this->form_validation->set_rules('birthdate', 'birthdate', 'required|trim|xss_clean|max_length[2]|numeric');
 		 $this->form_validation->set_rules('Profession', 'profession', 'required|trim|xss_clean|max_length[30]');  
 		 $this->form_validation->set_rules('field', 'Jop field', 'required|trim|xss_clean|max_length[25]|');  
 		
        
         $this->form_validation->set_rules('city', 'city', 'required|max_length[30]|trim|xss_clean');
        
-         $this->form_validation->set_rules('hobbies', 'hobbies', 'required|trim|xss_clean|max_length[300]|min_length[60]');
+         $this->form_validation->set_rules('hobbies', 'hobbies', 'required|trim|xss_clean|max_length[300]');
        
        
 

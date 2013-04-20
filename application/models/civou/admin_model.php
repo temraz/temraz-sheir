@@ -262,7 +262,23 @@ public function get_category(){
         }
 		}
 /////////////////////////////////////////////////
-	  		  /////////////////////////////////
+function get_user_bouns($id){
+	$sql='select rate from users where id=? ';
+	$result=$this->db->query($sql,$id);
+	if ($result->num_rows() ==1) {
+            return $result->row(0);
+        } else {
+            return false;
+        }
+	}
+ /////////////////////////////////
+ function update_user_bouns($id,$bouns){
+	 
+	 	  $data = array('rate' => $bouns);
+	$this->db->where('id',$id);
+			 $query = $this->db->update('users',$data);
+	 }
+ ///////////////////////////////////
 
 }
 

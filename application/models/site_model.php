@@ -107,12 +107,12 @@ public function add_temp_user($key){
     }
 	////////////////////////////////////////////////////////////
 	function select_user($id){
-		$query="select id,email,name,phone,job,prof,city,pic,hobbit from users where id=?";
+		$query="select id,email,name,phone,job,prof,city,pic,rate,hobbit from users where id=?";
 		 $result=$this->db->query($query,$id);
 		 if($result->num_rows() == 1){
 			 $data_result=array('id'=>$result->row(0)->id,'username'=>$result->row(0)->name, 'email'=>$result->row(0)->email ,
 				                   'city'=>$result->row(0)->city,'job'=>$result->row(0)->job,'prof'=>$result->row(0)->prof,'pic'=>$result->row(0)->pic,
-								   'phone'=>$result->row(0)->phone,'hobbit'=>$result->row(0)->hobbit
+								   'phone'=>$result->row(0)->phone,'hobbit'=>$result->row(0)->hobbit,'rate'=>$result->row(0)->rate
 								     );
 				return  $data_result; 
 			 
@@ -205,7 +205,45 @@ public function get_all_photo_albums($id){
 	  $query = $this->db->get('photos_album');
 	  return $query->result();
 	  }
-		
+///////////////////////////////////////////////////
+function select_gallery($id){
+	$sql="select  t.user_id,t.photo_id,p.photo_name,p.album_id
+			   from album_tags t
+			   join photos_album p on t.photo_id=p.id
+               where t.user_id=? limit 9";
+	    	$result=$this->db->query($sql,$id);
+	if ($result->num_rows() >=1) {
+            return $result->result();
+        } else {
+            return false;
+        }	   
+			   
+	}
+///////////////////////////////////////////////////
+function select_user_albums($id){
+	$sql="select  t.user_id,t.photo_id,a.photo_name,a.id,a.dept_name,a.name
+			   from album_tags t
+			   join albums a on t.album_id=a.id
+               where t.user_id=? limit 3";
+	    	$result=$this->db->query($sql,$id);
+	if ($result->num_rows() >=1) {
+            return $result->result();
+        } else {
+            return false;
+        }	   
+			   
+	}	
+	///////////////////////////////////////////////////
+function select_effective_user(){
+	$sql="select id,rate, left(name,20)as name,left(job,20)as job,birthdate,pic from users order by rate DESC limit 4";
+	    	$result=$this->db->query($sql);
+	if ($result->num_rows() >=1) {
+            return $result->result();
+        } else {
+            return false;
+        }	   
+			   
+	}	
 
 
 

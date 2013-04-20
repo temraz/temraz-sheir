@@ -35,7 +35,7 @@
 					</div>
 					<nav>
 						<ul class="nav nav-pills nav-main" id="mainMenu">
-							<li class="active">
+							<li >
 								<a href="<?php echo base_url();?>home/">Home</a>
 							</li>
                             
